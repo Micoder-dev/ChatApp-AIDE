@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "864402924560",
+    "project_id": "chatapp-da332",
+    "storage_bucket": "chatapp-da332.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864402924560:android:ceb4fdd394d39456c0d695",
+        "android_client_info": {
+          "package_name": "com.heshwa.mymessagingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "864402924560-ptc0ts36knvuelfmjcbe2tqu5f9g92r5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_6UDUy9mEY2HqgEHPjUA-DN7iNacdE6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "864402924560-ptc0ts36knvuelfmjcbe2tqu5f9g92r5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
