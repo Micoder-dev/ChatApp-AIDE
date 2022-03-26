@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import android.util.Patterns;
 
 public class SignUpActivity extends AppCompatActivity {
     private Button btnSign;
@@ -64,7 +65,33 @@ public class SignUpActivity extends AppCompatActivity {
 
                 if(userName.equals("") || email.equals("") || password.equals(""))
                 {
-                    Toast.makeText(SignUpActivity.this,"All field are Mandatory",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(SignUpActivity.this,"All field are Mandatory",Toast.LENGTH_SHORT).show();
+					if(userName.isEmpty()){
+						edtUserName.setError("Full name required");
+						edtUserName.requestFocus();
+						return;
+					}
+					if(email.isEmpty()){
+						edtEmail.setError("Email required");
+						edtEmail.requestFocus();
+						return;
+					}
+					if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+						edtEmail.setError("Please enter a valid email");
+						edtEmail.requestFocus();
+						return;
+					}
+
+					if(password.isEmpty()){
+						edtPassword.setError("Password required");
+						edtPassword.requestFocus();
+						return;
+					}
+					if(password.length() < 6){
+						edtPassword.setError("Password must be greater than 6");
+						edtPassword.requestFocus();
+						return;
+					}
                 }
                 else
                 {

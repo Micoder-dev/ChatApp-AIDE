@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import android.util.Patterns;
 
 public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
@@ -41,7 +42,28 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(email.equals("")|| password.equals(""))
                 {
-                    Toast.makeText(LoginActivity.this,"All fields are mandatory",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(LoginActivity.this,"All fields are mandatory",Toast.LENGTH_SHORT).show();
+					if(email.isEmpty()){
+						edtEmail.setError("Email required");
+						edtEmail.requestFocus();
+						return;
+					}
+					if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+						edtEmail.setError("Please enter a valid email");
+						edtEmail.requestFocus();
+						return;
+					}
+
+					if(password.isEmpty()){
+						edtPassword.setError("Password required");
+						edtPassword.requestFocus();
+						return;
+					}
+					if(password.length() < 6){
+						edtPassword.setError("Password must be greater than 6");
+						edtPassword.requestFocus();
+						return;
+					}
                 }
                 else {
                     pg.show();
