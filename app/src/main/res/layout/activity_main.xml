@@ -6,22 +6,23 @@
     android:layout_width="match_parent"
     tools:context=".MainActivity"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+	android:background="@drawable/bg_fone">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+		android:background="@color/pink">
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="10dp"
             android:id="@+id/toolBar">
             <de.hdodenhof.circleimageview.CircleImageView
+				android:id="@+id/profileImg"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:id="@+id/profile_image"
-                android:src="@drawable/logo"
-                />
+                android:src="@drawable/logo"/>
 
             <TextView
                 android:id="@+id/txtDisplayName"

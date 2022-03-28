@@ -29,6 +29,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import androidx.appcompat.app.AlertDialog;
+import android.content.DialogInterface;
 
 public class MainActivity extends AppCompatActivity {
     private TextView txtdiplayUserName;
@@ -99,8 +101,10 @@ public class MainActivity extends AppCompatActivity {
             HashMap<String,Object> map = new HashMap<>();
             map.put("Offline",ServerValue.TIMESTAMP);
             userRef.child(mAuth.getCurrentUser().getUid()).child("Status").setValue(map);
-            FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(MainActivity.this,SignUpActivity.class);
+            mAuth.signOut();
+            Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
         }
@@ -109,9 +113,18 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-
-        onDestroy();
+		
+		new AlertDialog.Builder(this)
+			.setMessage("Are you sure want to exit???")
+			.setCancelable(false)
+			.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialogInterface, int i) {
+					finish();
+				}
+			})
+			.setNegativeButton("No", null)
+			.show();
     }
 
 

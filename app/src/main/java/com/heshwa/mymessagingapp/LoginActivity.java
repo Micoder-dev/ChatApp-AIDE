@@ -16,11 +16,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import android.util.Patterns;
+import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private EditText edtEmail ,edtPassword;
     private FirebaseAuth mAuth;
+	private TextView gotoRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,14 @@ public class LoginActivity extends AppCompatActivity {
         pg.setTitle("Authentication");
         pg.setMessage("Please wait until authentication finishes");
         mAuth = FirebaseAuth.getInstance();
+		
+		gotoRegister=findViewById(R.id.gotoRegister);
+		gotoRegister.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View v){
+				startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
+			}
+		});
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
