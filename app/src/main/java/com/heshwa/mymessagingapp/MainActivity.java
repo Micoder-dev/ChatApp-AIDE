@@ -31,6 +31,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import androidx.appcompat.app.AlertDialog;
 import android.content.DialogInterface;
+import android.widget.ImageView;
+import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
     private TextView txtdiplayUserName;
@@ -40,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private TabAdapter mTabAdapter;
+	
+	//private ImageView imgView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +63,11 @@ public class MainActivity extends AppCompatActivity {
 
         mToolbar = findViewById(R.id.toolBar);
         setSupportActionBar(mToolbar);
+		
+		//imgView2=findViewById(R.id.imgView2);
+		
+		//String imageUri = "https://i.imgur.com/tGbaZCY.jpg";
+		//Picasso.with(this).load(imageUri).into(imgView2);
 
 
         userRef = FirebaseDatabase.getInstance().getReference().child("Users");

@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private EditText edtEmail ,edtPassword;
     private FirebaseAuth mAuth;
-	private TextView gotoRegister;
+	private TextView gotoRegister,forgotPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,14 @@ public class LoginActivity extends AppCompatActivity {
         pg.setTitle("Authentication");
         pg.setMessage("Please wait until authentication finishes");
         mAuth = FirebaseAuth.getInstance();
+		
+		forgotPassword=findViewById(R.id.forgotPassword);
+		forgotPassword.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View v){
+				startActivity(new Intent(LoginActivity.this,ForgotPassword.class));
+			}
+		});
 		
 		gotoRegister=findViewById(R.id.gotoRegister);
 		gotoRegister.setOnClickListener(new View.OnClickListener(){

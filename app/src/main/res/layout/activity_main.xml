@@ -23,6 +23,11 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/logo"/>
+			<!--<ImageView
+				android:id="@+id/imgView2"
+				android:layout_height="50dp"
+				android:layout_width="50dp"
+				android:src="@drawable/logo"/>-->
 
             <TextView
                 android:id="@+id/txtDisplayName"

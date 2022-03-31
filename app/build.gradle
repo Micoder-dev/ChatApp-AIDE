@@ -27,6 +27,8 @@ android {
 }
 
 dependencies {
+	implementation 'com.squareup.picasso:picasso:2.6.0-SNAPSHOT'
+	implementation 'com.squareup.picasso:picasso:2.5.2' 
 	implementation platform('com.google.firebase:firebase-bom:29.2.1')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.1.0'

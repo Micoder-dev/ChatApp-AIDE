@@ -1,6 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version='1.0' encoding='utf-8'?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.heshwa.mymessagingapp">
+
+    <!-- have full network access -->
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -9,21 +13,33 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MessageActivity"></activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".SignUpActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+        <activity android:name=".MessageActivity"/>
+
+        <activity android:name=".LoginActivity"/>
+
+        <activity android:name=".SignUpActivity">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+
             </intent-filter>
+
         </activity>
-        <activity android:name=".MainActivity"
-			android:theme="@style/MyTheme"/>
+		
+		<activity android:name=".ForgotPassword"/>
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/MyTheme"/>
 
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+            android:resource="@array/preloaded_fonts"/>
+
     </application>
 
 </manifest>
