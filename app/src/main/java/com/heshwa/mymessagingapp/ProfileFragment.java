@@ -20,6 +20,8 @@ import android.widget.Button;
 import android.content.Intent;
 import java.util.HashMap;
 import com.google.firebase.database.ServerValue;
+import androidx.appcompat.app.AlertDialog;
+import android.content.DialogInterface;
 
 
 public class ProfileFragment extends Fragment {
@@ -47,15 +49,26 @@ public class ProfileFragment extends Fragment {
 		logoutBtn.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View view){
-				HashMap<String,Object> map = new HashMap<>();
-				map.put("Offline",ServerValue.TIMESTAMP);
-				userRef.child(mAuth.getCurrentUser().getUid()).child("Status").setValue(map);
-				mAuth.signOut();
-				Intent intent = new Intent(getActivity(),LoginActivity.class);
-				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-				startActivity(intent);
-				getActivity().finish();
+				
+				AlertDialog.Builder alert=new AlertDialog.Builder(getContext());
+                alert.setMessage("Are you sure want to Logout!")
+					.setCancelable(false)
+					.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialogInterface, int i) {
+							HashMap<String,Object> map = new HashMap<>();
+							map.put("Offline",ServerValue.TIMESTAMP);
+							userRef.child(mAuth.getCurrentUser().getUid()).child("Status").setValue(map);
+							mAuth.signOut();
+							Intent intent = new Intent(getActivity(),LoginActivity.class);
+							intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+							intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+							startActivity(intent);
+							getActivity().finish();
+						}
+					})
+					.setNegativeButton("No", null)
+					.show();
 			}
 		});
 		

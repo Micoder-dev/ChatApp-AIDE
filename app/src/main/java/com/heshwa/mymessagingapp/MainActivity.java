@@ -107,15 +107,29 @@ public class MainActivity extends AppCompatActivity {
 
         if(item.getItemId() == R.id.itmLogOut)
         {
-            HashMap<String,Object> map = new HashMap<>();
-            map.put("Offline",ServerValue.TIMESTAMP);
-            userRef.child(mAuth.getCurrentUser().getUid()).child("Status").setValue(map);
-            mAuth.signOut();
-            Intent intent = new Intent(MainActivity.this,LoginActivity.class);
-			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            finish();
+            
+			new AlertDialog.Builder(this)
+				.setMessage("Are you sure want to Logout!")
+				.setCancelable(false)
+				.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialogInterface, int i) {
+						HashMap<String,Object> map = new HashMap<>();
+						map.put("Offline",ServerValue.TIMESTAMP);
+						userRef.child(mAuth.getCurrentUser().getUid()).child("Status").setValue(map);
+						mAuth.signOut();
+						Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+						intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+						intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+						startActivity(intent);
+						finish();
+						
+					}
+				}).setNegativeButton("No", null)
+				.show();
+			
+			
+			
         }
         return super.onOptionsItemSelected(item);
     }
