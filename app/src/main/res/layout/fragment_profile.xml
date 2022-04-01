@@ -50,9 +50,23 @@
 			<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="Heshwa"
+				android:text="MI_Coder"
 				android:textSize="24dp"
 				android:id="@+id/txtProfileName"
+				android:textColor="#000000"/>
+			
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Email"
+				android:textSize="18dp"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="micoder.com@gmail.com"
+				android:textSize="24dp"
+				android:id="@+id/txtEmail"
 				android:textColor="#000000"/>
 
 		</LinearLayout>

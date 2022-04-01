@@ -93,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
                                     {
                                         pg.dismiss();
                                         Toast.makeText(LoginActivity.this,"Successfully Signed in",Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                                        Intent intent = new Intent(LoginActivity.this,SplashScreen.class);
                                         startActivity(intent);
                                         finish();
                                     }

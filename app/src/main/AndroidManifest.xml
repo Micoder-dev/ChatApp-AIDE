@@ -13,22 +13,22 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".MessageActivity"/>
-
-        <activity android:name=".LoginActivity"/>
-
-        <activity android:name=".SignUpActivity">
-
-            <intent-filter>
+		
+		<activity android:name=".SplashScreen">
+			<intent-filter>
 
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
 
             </intent-filter>
+		</activity>
 
-        </activity>
+        <activity android:name=".MessageActivity"/>
+
+        <activity android:name=".LoginActivity"/>
+
+        <activity android:name=".SignUpActivity"/>
 		
 		<activity android:name=".ForgotPassword"/>
 

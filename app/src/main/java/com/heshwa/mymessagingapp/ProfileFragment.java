@@ -79,6 +79,7 @@ public class ProfileFragment extends Fragment {
                 if(snapshot.exists() && snapshot.hasChild("Name"))
                 {
                     txtProfile.setText(snapshot.child("Name").getValue().toString());
+					
                 }
 
             }
