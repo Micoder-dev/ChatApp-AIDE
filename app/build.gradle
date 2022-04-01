@@ -27,6 +27,7 @@ android {
 }
 
 dependencies {
+	implementation 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:2.0.24'
 	implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
 	implementation 'com.squareup.picasso:picasso:2.6.0-SNAPSHOT'
 	implementation 'com.squareup.picasso:picasso:2.5.2' 

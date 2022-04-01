@@ -1,64 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    tools:context=".MainActivity"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	tools:context=".MainActivity"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
 	android:background="@drawable/bg_fone">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-		android:background="@color/pink">
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="10dp"
-            android:id="@+id/toolBar">
-            <de.hdodenhof.circleimageview.CircleImageView
+	<com.google.android.material.appbar.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/background_border2"
+		android:layout_marginTop="5dp"
+		android:layout_marginLeft="5dp"
+		android:layout_marginRight="5dp">
+
+		<androidx.appcompat.widget.Toolbar
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:padding="10dp"
+			android:id="@+id/toolBar"
+			android:background="@drawable/background_border"
+			android:layout_marginTop="5dp"
+			android:layout_marginLeft="5dp"
+			android:layout_marginRight="5dp">
+
+			<de.hdodenhof.circleimageview.CircleImageView
 				android:id="@+id/profileImg"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/logo"/>
-			<!--<ImageView
-				android:id="@+id/imgView2"
-				android:layout_height="50dp"
 				android:layout_width="50dp"
-				android:src="@drawable/logo"/>-->
+				android:layout_height="50dp"
+				android:src="@drawable/logo"/>
 
-            <TextView
-                android:id="@+id/txtDisplayName"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/abril_fatface"
-                android:padding="10dp"
-                android:text="Hello"
-                android:textColor="#ffff"
-                android:textSize="24sp"
-                android:textStyle="bold|italic" />
+			<TextView
+				android:id="@+id/txtDisplayName"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:fontFamily="@font/abril_fatface"
+				android:padding="10dp"
+				android:text="Hello"
+				android:textColor="#ffff"
+				android:textSize="24sp"
+				android:textStyle="bold|italic"/>
 
-        </androidx.appcompat.widget.Toolbar>
-        <com.google.android.material.tabs.TabLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/tabLayout"
-            app:tabTextColor="#000000"
-            app:tabRippleColor="@color/white"
-            app:tabSelectedTextColor="@color/white"/>
+		</androidx.appcompat.widget.Toolbar>
 
+		<com.google.android.material.tabs.TabLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/tabLayout"
+			app:tabTextColor="#000000"
+			app:tabRippleColor="@color/white"
+			app:tabSelectedTextColor="@color/white"/>
 
-    </com.google.android.material.appbar.AppBarLayout>
-    <androidx.viewpager.widget.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/viewPager"/>
+	</com.google.android.material.appbar.AppBarLayout>
 
-
-
-
-
+	<androidx.viewpager.widget.ViewPager
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/viewPager"/>
 
 </LinearLayout>
+

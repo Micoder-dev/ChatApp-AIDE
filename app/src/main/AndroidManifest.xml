@@ -33,8 +33,7 @@
 		<activity android:name=".ForgotPassword"/>
 
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/MyTheme"/>
+            android:name=".MainActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"
