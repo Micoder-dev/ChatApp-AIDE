@@ -33,6 +33,7 @@ import androidx.appcompat.app.AlertDialog;
 import android.content.DialogInterface;
 import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private TextView txtdiplayUserName;
@@ -85,13 +86,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
-
     }
 
     @Override
@@ -105,6 +99,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
+		if(item.getItemId() == R.id.itmAbout)
+        {
+			Toast.makeText(MainActivity.this,"About Clicked",Toast.LENGTH_SHORT).show();
+		}
+		if(item.getItemId() == R.id.itmSettings)
+        {
+			Toast.makeText(MainActivity.this,"Settings Clicked",Toast.LENGTH_SHORT).show();
+		}
         if(item.getItemId() == R.id.itmLogOut)
         {
             
@@ -124,10 +126,26 @@ public class MainActivity extends AppCompatActivity {
 					}
 				}).setNegativeButton("No", null)
 				.show();
-			
-			
-			
         }
+		if(item.getItemId() == R.id.itmExit)
+        {
+			//when exit menu clicked alert dialog
+            Toast.makeText(getApplicationContext(),
+						   "Click 'yes' to exit",
+						   Toast.LENGTH_SHORT)
+				.show();
+            new AlertDialog.Builder(this)
+				.setMessage("Are you sure want to exit???")
+				.setCancelable(false)
+				.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialogInterface, int i) {
+						finish();
+					}
+				})
+				.setNegativeButton("No", null)
+				.show();
+		}
         return super.onOptionsItemSelected(item);
     }
 
