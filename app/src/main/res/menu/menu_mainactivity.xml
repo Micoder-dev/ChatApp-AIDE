@@ -4,7 +4,8 @@
 
 	<item
         android:id="@+id/itmAbout"
-        android:title="About"/>
+        android:title="About"
+		android:background="@color/red"/>
     <item
         android:id="@+id/itmSettings"
         android:title="Settings"/>

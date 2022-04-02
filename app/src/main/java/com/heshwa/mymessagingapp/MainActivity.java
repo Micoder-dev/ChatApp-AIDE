@@ -34,7 +34,8 @@ import android.content.DialogInterface;
 import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 import android.widget.Toast;
-import com.ToxicBakery.viewpager.transforms.RotateUpTransformer;
+
+import com.ToxicBakery.viewpager.transforms.ScaleInOutTransformer;
 
 public class MainActivity extends AppCompatActivity {
     private TextView txtdiplayUserName;
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 		//Picasso.with(this).load(imageUri).into(imgView2);
 		
 		// Reference (or instantiate) a ViewPager instance and apply a transformer
-		mViewPager.setPageTransformer(true, new RotateUpTransformer());
+		mViewPager.setPageTransformer(true, new ScaleInOutTransformer());
 
 
         userRef = FirebaseDatabase.getInstance().getReference().child("Users");
